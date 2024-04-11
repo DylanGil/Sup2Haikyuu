@@ -1,0 +1,78 @@
+{
+  "page-title": {
+    "home": "Sup2Haikyuu | Home",
+    "file": "File",
+    "tournaments": "Tournaments",
+    "teams": "Teams",
+    "signup": "Sign up",
+    "signin": "Sign in",
+    "pricing": "Pricing"
+  },
+  "page-description": {
+    "home": "Home",
+    "tournaments": "Manage your tournaments",
+    "teams": "Manage your teams",
+    "signup": "Sign up",
+    "signin": "Sign in",
+    "pricing": "Our prices"
+  },
+  "server-component": {
+    "welcome": "Welcome"
+  },
+  "footer": {
+    "followus": "Follow us",
+    "characters": "Characters",
+    "news": "News"
+  },
+  "signin": {
+    "title": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "required": "This field is required",
+    "errorEmail": "Please enter a valid email",
+    "errorPassword": "Please enter a password",
+    "errorApi": "An error occurred, please try again later.",
+    "succesApi": "You are now connected"
+  },
+  "signup": {
+    "title": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "passwordConfirmation": "Password confirmation",
+    "submit": "Sign up",
+    "required": "This field is required",
+    "errorEmail": "Please enter a valid email",
+    "errorPassword": "Please enter a password",
+    "errorPasswordConfirmation": "Passwords do not match",
+    "errorEmailAlreadyExists": "This email is already used",
+    "errorApi": "An error occurred, please try again later.",
+    "succesApi": "You are now registered"
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "firstParagraph": "We offer several packs with different services. For any additional information, please complete the quote request form below.",
+    "secondParagraph": "/!\\ Virtual tours: we offer the best price on the market :",
+    "thirdParagraph": "A 3D tour of white label accommodation from 50 euros",
+    "contactTitle": "Quote request",
+    "contactSubtitle": "Please indicate your expectations/questions below and we will contact you shortly.",
+    "contactLastname": "Last Name:",
+    "contactFirstname": "First Name:",
+    "contactEmail": "Email:",
+    "contactPhone": "Téléphone:",
+    "contactMessage": "Write us your request",
+    "contactSend": "Send",
+    "errorLastname": "Please enter your last name",
+    "errorFirstname": "Please enter your first name",
+    "errorEmail": "Please enter a valid email",
+    "errorPhone": "Please enter a valid phone number",
+    "errorPhoneLength": "Please enter a valid phone number",
+    "errorMessage": "Please enter a message",
+    "apiError": "An error occurred, please try again later.",
+    "apiSuccess": "We have received your request, we will contact you shortly."
+  },
+  "error": {
+    "404": "404 - Page not found",
+    "404description": "The page you are looking for does not exist."
+  }
+}

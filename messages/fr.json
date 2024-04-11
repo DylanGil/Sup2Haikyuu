@@ -1,0 +1,87 @@
+{
+  "page-title": {
+    "home": "Sup2Haikyuu - Accueil",
+    "file": "Fichier",
+    "tournaments": "Tournois",
+    "teams": "Equipes",
+    "signup": "S'inscrire",
+    "signin": "Se connecter",
+    "pricing": "Tarifs"
+  },
+  "page-description": {
+    "home": "Accueil",
+    "tournaments": "Gestion des tournois",
+    "teams": "Gestion des équipes",
+    "signup": "S'inscrire",
+    "signin": "Se connecter",
+    "pricing": "Nos tarifs"
+  },
+  "server-component": {
+    "welcome": "Bonjour"
+  },
+  "footer": {
+    "followus": "Suivez-nous",
+    "characters": "Personnages",
+    "news": "Actualités"
+  },
+  "signin": {
+    "title": "Se connecter",
+    "email": "Email",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "required": "Ce champ est obligatoire",
+    "errorEmail": "Veuillez renseigner votre email",
+    "errorPassword": "Veuillez renseigner votre mot de passe",
+    "errorApi": "Une erreur est survenue, veuillez réessayer plus tard",
+    "successApi": "Vous êtes bien connecté"
+  },
+  "signup": {
+    "title": "S'inscrire",
+    "email": "Email",
+    "password": "Mot de passe",
+    "passwordConfirmation": "Confirmer le mot de passe",
+    "submit": "S'inscrire",
+    "required": "Ce champ est obligatoire",
+    "errorEmail": "Veuillez renseigner votre email",
+    "errorPassword": "Veuillez renseigner votre mot de passe",
+    "errorPasswordConfirmation": "Les mots de passe ne correspondent pas",
+    "errorEmailAlreadyExists": "Cet email est déjà utilisé",
+    "errorApi": "Une erreur est survenue, veuillez réessayer plus tard",
+    "successApi": "Votre compte a bien été créé"
+  },
+  "fileForm": {
+    "title": "Déposer un fichier",
+    "file": "Fichier",
+    "submit": "Envoyer",
+    "required": "Ce champ est obligatoire",
+    "errorFile": "Veuillez sélectionner un fichier",
+    "errorApi": "Une erreur est survenue, veuillez réessayer plus tard",
+    "successApi": "Votre fichier a bien été envoyé"
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "firstParagraph": "Nous proposons plusieurs packs avec des services différents. Pour toute information complémentaire, merci de bien vouloir remplir le formulaire de demande de devis ci-dessous.",
+    "secondParagraph": "/!\\ Visites virtuelles : nous proposons le meilleur tarif du marché :",
+    "thirdParagraph": "Une visite 3D de logements en marque blanche à partir de 50 euros",
+    "contactTitle": "Demande de devis",
+    "contactSubtitle": "Veuillez indiquer ci-dessous vos attentes/questions et nous reprendrons rapidement contact avec vous.",
+    "contactLastname": "Nom:",
+    "contactFirstname": "Prénom:",
+    "contactEmail": "Email:",
+    "contactPhone": "Téléphone:",
+    "contactSend": "Envoyer",
+    "contactMessage": "Ecrivez nous votre demande",
+    "errorLastname": "Veuillez renseigner votre nom",
+    "errorFirstname": "Veuillez renseigner votre prénom",
+    "errorEmail": "Veuillez renseigner votre email",
+    "errorPhone": "Veuillez renseigner votre téléphone",
+    "errorPhoneFormat": "Veuillez renseigner un numéro de téléphone valide",
+    "errorMessage": "Veuillez renseigner votre message",
+    "apiError": "Une erreur est survenue, veuillez réessayer plus tard",
+    "apiSuccess": "Nous avons bien reçu votre demande, nous vous recontacterons dans les plus brefs délais."
+  },
+  "error": {
+    "404": "404 - Page non trouvée",
+    "404description": "La page que vous cherchez n'existe pas."
+  }
+}
