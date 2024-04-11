@@ -87,6 +87,7 @@
   },
   "players": {
     "title": "Players",
+    "description": "Double click to see details of the player",
     "add": "Add a player",
     "name": "Name",
     "delete": "Delete",
@@ -95,6 +96,9 @@
     "team": "Team",
     "submit": "Add",
     "required": "This field is required",
+    "errorName": "Please enter a name",
+    "errorNumber": "Please enter a number",
+    "errorTeam": "Please select a team",
     "errorApi": "An error occurred, please try again later",
     "successApi": "The player has been added"
   },

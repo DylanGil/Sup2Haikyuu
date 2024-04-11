@@ -3,6 +3,7 @@ import Image from "next/image";
 import {
   Table,
   TableBody,
+  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -29,6 +30,7 @@ import { FaSpinner } from "react-icons/fa";
 import { Button } from "../components/ui/button";
 import { Label } from "../components/ui/label";
 import { Input } from "../components/ui/input";
+import { useRouter } from "next/navigation";
 
 interface Player {
   id: number;
@@ -47,8 +49,9 @@ export default function Home() {
   const [players, setPlayers] = useState<Player[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>();
-  const [playerName, setPlayerInfo] = useState({ name: "Dylan", number: 18 });
+  const [playerInfo, setPlayerInfo] = useState({ name: "Dylan", number: 18 });
   const t = useTranslations("players");
+  const router = useRouter();
   useEffect(() => {
     fetch("/api/players")
       .then((res) => res.json())
@@ -83,7 +86,7 @@ export default function Home() {
   const addPlayer = async () => {
     const response = await fetch(`/api/players`, {
       method: "POST",
-      body: JSON.stringify(playerName),
+      body: JSON.stringify(playerInfo),
     });
 
     if (!response.ok) {
@@ -100,6 +103,11 @@ export default function Home() {
           setIsLoading(false);
         });
     }
+  };
+
+  const onDoubleClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
+    const playerId = e.currentTarget.id;
+    router.push(`/players/${playerId}`);
   };
 
   return (
@@ -129,7 +137,7 @@ export default function Home() {
                     onChange={(e) =>
                       setPlayerInfo({
                         name: e.target.value,
-                        number: playerName.number,
+                        number: playerInfo.number,
                       })
                     }
                     defaultValue="Dylan"
@@ -142,7 +150,7 @@ export default function Home() {
                     id="number"
                     onChange={(e) =>
                       setPlayerInfo({
-                        name: playerName.name,
+                        name: playerInfo.name,
                         number: parseInt(e.target.value),
                       })
                     }
@@ -160,6 +168,7 @@ export default function Home() {
             </DialogContent>
           </Dialog>
           <Table>
+            <TableCaption>{t("description")}</TableCaption>
             <TableHeader>
               <TableRow>
                 <TableHead>{t("name")}</TableHead>
@@ -170,7 +179,11 @@ export default function Home() {
             </TableHeader>
             <TableBody>
               {players.map((player) => (
-                <TableRow key={player.id}>
+                <TableRow
+                  key={player.id}
+                  id={player.id.toString()}
+                  onDoubleClick={onDoubleClick}
+                >
                   <TableCell>{player.name}</TableCell>
                   <TableCell>{player.number}</TableCell>
                   <TableCell>{player?.team?.name}</TableCell>

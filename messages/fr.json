@@ -96,6 +96,7 @@
   },
   "players": {
     "title": "Joueurs",
+    "description": "Double cliquez pour voir les détails du joueur",
     "add": "Ajouter un joueur",
     "name": "Nom",
     "delete": "Supprimer",
@@ -104,6 +105,9 @@
     "team": "Equipe",
     "submit": "Ajouter",
     "required": "Ce champ est obligatoire",
+    "errorName": "Veuillez renseigner le nom du joueur",
+    "errorNumber": "Veuillez renseigner le numéro du joueur",
+    "errorTeam": "Veuillez renseigner l'équipe du joueur",
     "errorApi": "Une erreur est survenue, veuillez réessayer plus tard",
     "successApi": "Le joueur a bien été ajouté"
   },
