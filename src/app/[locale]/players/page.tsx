@@ -9,6 +9,11 @@ import {
   TableRow,
 } from "../components/ui/table";
 import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "../components/ui/popover";
+import {
   Dialog,
   DialogClose,
   DialogContent,
@@ -18,11 +23,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../components/ui/dialog";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../components/ui/popover";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -35,6 +35,7 @@ interface Player {
   name: string;
   number: number;
   team_id: number;
+  team: Team;
 }
 interface Team {
   id: number;
@@ -43,64 +44,61 @@ interface Team {
 }
 
 export default function Home() {
-  const [teams, setTeams] = useState<Team[]>([]);
+  const [players, setPlayers] = useState<Player[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [teamName, setTeamName] = useState("new");
-  const [selectedTeam, setSelectedTeam] = useState<Team | null>();
-  const t = useTranslations("teams");
+  const [selectedPlayer, setSelectedPlayer] = useState<Player | null>();
+  const [playerName, setPlayerInfo] = useState({ name: "Dylan", number: 18 });
+  const t = useTranslations("players");
   useEffect(() => {
-    fetch("/api/teams")
+    fetch("/api/players")
       .then((res) => res.json())
       .then((data) => {
-        setTeams(data);
+        setPlayers(data);
         setIsLoading(false);
       });
   }, []);
-  {
-    teams.map((team) => {
-      console.log(team.players);
-    });
-  }
-
-  const addTeam = async () => {
-    const response = await fetch(`/api/teams`, {
-      method: "POST",
-      body: JSON.stringify({ name: teamName }),
-    });
-
-    if (!response.ok) {
-      // Handle error
-      console.error("Failed to add team");
-    } else {
-      // Handle success
-      console.log("Team added successfully");
-      fetch("/api/teams")
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("data", data);
-          setTeams(data);
-          setIsLoading(false);
-        });
-    }
-  };
 
   const confirmDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    console.log("delete", selectedTeam?.id);
+    console.log("delete", selectedPlayer?.id);
 
-    if (selectedTeam?.id) {
-      const response = await fetch(`/api/teams/${selectedTeam.id}`, {
+    if (selectedPlayer?.id) {
+      const response = await fetch(`/api/players/${selectedPlayer.id}`, {
         method: "DELETE",
       });
 
       if (!response.ok) {
         // Handle error
-        console.error("Failed to delete tournament");
+        console.error("Failed to delete player");
       } else {
         // Handle success
-        console.log("Tournament deleted successfully");
-        setTeams((prev) => prev.filter((team) => team.id !== selectedTeam.id));
+        console.log("Player deleted successfully");
+        setPlayers((prev) =>
+          prev.filter((player) => player.id !== selectedPlayer.id)
+        );
       }
+    }
+  };
+
+  const addPlayer = async () => {
+    const response = await fetch(`/api/players`, {
+      method: "POST",
+      body: JSON.stringify(playerName),
+    });
+
+    if (!response.ok) {
+      // Handle error
+      console.error("Failed to add player");
+    } else {
+      // Handle success
+      console.log("Player added successfully");
+      fetch("/api/players")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("data", data);
+          setPlayers(data);
+          setIsLoading(false);
+        });
     }
   };
 
@@ -128,15 +126,35 @@ export default function Home() {
                   </Label>
                   <Input
                     id="name"
-                    onChange={(e) => setTeamName(e.target.value)}
-                    defaultValue="new"
+                    onChange={(e) =>
+                      setPlayerInfo({
+                        name: e.target.value,
+                        number: playerName.number,
+                      })
+                    }
+                    defaultValue="Dylan"
+                    className="col-span-3"
+                  />
+                  <Label htmlFor="number" className="text-right">
+                    {t("number")}
+                  </Label>
+                  <Input
+                    id="number"
+                    onChange={(e) =>
+                      setPlayerInfo({
+                        name: playerName.name,
+                        number: parseInt(e.target.value),
+                      })
+                    }
+                    defaultValue={18}
+                    type="number"
                     className="col-span-3"
                   />
                 </div>
               </div>
               <DialogClose asChild>
                 <DialogFooter>
-                  <Button onClick={addTeam}>{t("add")}</Button>
+                  <Button onClick={addPlayer}>{t("add")}</Button>
                 </DialogFooter>
               </DialogClose>
             </DialogContent>
@@ -145,26 +163,24 @@ export default function Home() {
             <TableHeader>
               <TableRow>
                 <TableHead>{t("name")}</TableHead>
-                <TableHead>{t("players")}</TableHead>
+                <TableHead>{t("number")}</TableHead>
+                <TableHead>{t("team")}</TableHead>
                 <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {teams.map((team) => (
-                <TableRow key={team.id}>
-                  <TableCell>{team.name}</TableCell>
-                  <TableCell>
-                    {team.players.map((player) => (
-                      <p key={player.id}>{player.name}</p>
-                    ))}
-                  </TableCell>
+              {players.map((player) => (
+                <TableRow key={player.id}>
+                  <TableCell>{player.name}</TableCell>
+                  <TableCell>{player.number}</TableCell>
+                  <TableCell>{player?.team?.name}</TableCell>
                   <TableCell>
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
                           variant={"ghost"}
                           onClick={() => {
-                            setSelectedTeam(team);
+                            setSelectedPlayer(player);
                           }}
                         >
                           {t("delete")}

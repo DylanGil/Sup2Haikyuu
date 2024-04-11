@@ -43,6 +43,11 @@ export function Header({ locale }: { locale: string }) {
               pageTitle="teams"
             />
             <HeaderPageButton
+              href={`/${locale}/players`}
+              onClick={() => setIsOpen(false)}
+              pageTitle="players"
+            />
+            <HeaderPageButton
               href={`/${locale}/signin`}
               onClick={() => setIsOpen(false)}
               pageTitle="signin"

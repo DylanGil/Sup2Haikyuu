@@ -13,6 +13,8 @@ export default function IndexPage({
     <main className="flex flex-col items-center justify-between p-24">
       <div>
         <h1 className="text-6xl font-bold">{t("welcome")}</h1>
+        (This WelcomePage is still in development) <br />
+        (You can check other pages)
       </div>
     </main>
   );

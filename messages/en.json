@@ -4,6 +4,7 @@
     "file": "File",
     "tournaments": "Tournaments",
     "teams": "Teams",
+    "players": "Players",
     "signup": "Sign up",
     "signin": "Sign in",
     "pricing": "Pricing"
@@ -12,6 +13,7 @@
     "home": "Home",
     "tournaments": "Manage your tournaments",
     "teams": "Manage your teams",
+    "players": "Manage your players",
     "signup": "Sign up",
     "signin": "Sign in",
     "pricing": "Our prices"
@@ -70,6 +72,60 @@
     "errorMessage": "Please enter a message",
     "apiError": "An error occurred, please try again later.",
     "apiSuccess": "We have received your request, we will contact you shortly."
+  },
+  "teams": {
+    "title": "Teams",
+    "add": "Add a team",
+    "name": "Name",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure ?",
+    "players": "Players",
+    "submit": "Add",
+    "required": "This field is required",
+    "errorApi": "An error occurred, please try again later",
+    "successApi": "The team has been added"
+  },
+  "players": {
+    "title": "Players",
+    "add": "Add a player",
+    "name": "Name",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure ?",
+    "number": "Number",
+    "team": "Team",
+    "submit": "Add",
+    "required": "This field is required",
+    "errorApi": "An error occurred, please try again later",
+    "successApi": "The player has been added"
+  },
+  "tournaments": {
+    "title": "Tournaments",
+    "description": "Double click to see details of the tournament",
+    "add": "Add a tournament",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure ?",
+    "name": "Name",
+    "teams": "Teams",
+    "matchs": "Matchs",
+    "submit": "Add",
+    "required": "This field is required",
+    "errorApi": "An error occurred, please try again later",
+    "successApi": "The tournament has been added"
+  },
+  "matchs": {
+    "title": "Match",
+    "add": "Add a match",
+    "team1": "Team 1",
+    "team2": "Team 2",
+    "score": "Score",
+    "score1": "Score 1",
+    "score2": "Score 2",
+    "winner": "Winner",
+    "submit": "Add",
+    "required": "This field is required",
+    "errorApi": "An error occurred, please try again later",
+    "successApi": "The match has been added"
   },
   "error": {
     "404": "404 - Page not found",

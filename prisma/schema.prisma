@@ -1,22 +1,70 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
-model Parcel {
-  id Int @id @default(autoincrement())
-  weight Float
-  address_dep String
-  address_arr String
-  status String
+model Player {
+  @@map("player")
+
+  id        Int       @id @default(autoincrement())
+  name      String
+  number    Int
+  team_id   Int?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  team Team? @relation( "PlayerTeam",fields: [team_id], references: [id], onDelete: SetNull)
 }
+
+model Team {
+  @@map("team")
+
+  id        Int       @id @default(autoincrement())
+  name      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  players   Player[]  @relation("PlayerTeam")
+  team1_matches Match[] @relation("Team1")
+  team2_matches Match[] @relation("Team2")
+  team_wins    Match[] @relation("Winner")
+}
+
+model Tournament {
+  @@map("tournament")
+
+  id        Int       @id @default(autoincrement())
+  name      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  matches   Match[]   @relation("TournamentMatch")
+}
+
+model Match {
+  @@map("match")
+
+  id           Int       @id @default(autoincrement())
+  team1_id     Int?
+  team2_id     Int?
+  winner_id    Int?
+  team1_score  Int
+  team2_score  Int
+  tournament_id Int?
+  match_date   DateTime
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime? @updatedAt
+
+  team1 Team? @relation("Team1", fields: [team1_id], references: [id], onDelete: SetNull)
+  team2 Team? @relation("Team2", fields: [team2_id], references: [id], onDelete: SetNull)
+  winner    Team? @relation("Winner", fields: [winner_id], references: [id], onDelete: SetNull)
+  tournament Tournament? @relation("TournamentMatch",fields: [tournament_id], references: [id], onDelete: SetNull)
+  }

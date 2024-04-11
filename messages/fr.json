@@ -4,6 +4,7 @@
     "file": "Fichier",
     "tournaments": "Tournois",
     "teams": "Equipes",
+    "players": "Joueurs",
     "signup": "S'inscrire",
     "signin": "Se connecter",
     "pricing": "Tarifs"
@@ -12,6 +13,7 @@
     "home": "Accueil",
     "tournaments": "Gestion des tournois",
     "teams": "Gestion des équipes",
+    "players": "Gestion des joueurs",
     "signup": "S'inscrire",
     "signin": "Se connecter",
     "pricing": "Nos tarifs"
@@ -79,6 +81,60 @@
     "errorMessage": "Veuillez renseigner votre message",
     "apiError": "Une erreur est survenue, veuillez réessayer plus tard",
     "apiSuccess": "Nous avons bien reçu votre demande, nous vous recontacterons dans les plus brefs délais."
+  },
+  "teams": {
+    "title": "Equipes",
+    "add": "Ajouter une équipe",
+    "name": "Nom",
+    "delete": "Supprimer",
+    "confirmDelete": "Etes-vous sûr ?",
+    "players": "Joueurs",
+    "submit": "Ajouter",
+    "required": "Ce champ est obligatoire",
+    "errorApi": "Une erreur est survenue, veuillez réessayer plus tard",
+    "successApi": "L'équipe a bien été ajoutée"
+  },
+  "players": {
+    "title": "Joueurs",
+    "add": "Ajouter un joueur",
+    "name": "Nom",
+    "delete": "Supprimer",
+    "confirmDelete": "Etes-vous sûr ?",
+    "number": "Numéro",
+    "team": "Equipe",
+    "submit": "Ajouter",
+    "required": "Ce champ est obligatoire",
+    "errorApi": "Une erreur est survenue, veuillez réessayer plus tard",
+    "successApi": "Le joueur a bien été ajouté"
+  },
+  "tournaments": {
+    "title": "Tournois",
+    "description": "Double cliquez pour voir les détails du tournoi",
+    "add": "Ajouter un tournoi",
+    "edit": "Editer",
+    "delete": "Supprimer",
+    "confirmDelete": "Etes-vous sûr ?",
+    "name": "Nom",
+    "teams": "Equipes",
+    "matchs": "Matchs",
+    "submit": "Ajouter",
+    "required": "Ce champ est obligatoire",
+    "errorApi": "Une erreur est survenue, veuillez réessayer plus tard",
+    "successApi": "Le tournoi a bien été ajouté"
+  },
+  "matchs": {
+    "title": "Match",
+    "add": "Ajouter un match",
+    "team1": "Equipe 1",
+    "team2": "Equipe 2",
+    "score": "Score",
+    "score1": "Score 1",
+    "score2": "Score 2",
+    "winner": "Vainqueur",
+    "submit": "Ajouter",
+    "required": "Ce champ est obligatoire",
+    "errorApi": "Une erreur est survenue, veuillez réessayer plus tard",
+    "successApi": "Le match a bien été ajouté"
   },
   "error": {
     "404": "404 - Page non trouvée",
