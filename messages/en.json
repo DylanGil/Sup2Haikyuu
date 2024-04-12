@@ -95,6 +95,7 @@
     "number": "Number",
     "team": "Team",
     "submit": "Add",
+    "update": "Update",
     "required": "This field is required",
     "errorName": "Please enter a name",
     "errorNumber": "Please enter a number",

@@ -93,20 +93,24 @@ export function Header({ locale }: { locale: string }) {
             </div>
             <div className="pt-2 text-center text-lg">
               <HeaderPageButton
-                href={`/${locale}/pricing`}
+                href={`/${locale}/tournaments`}
                 onClick={() => setIsOpen(false)}
-                pageTitle="pricing"
-                mobile
+                pageTitle="tournaments"
+              />
+              <HeaderPageButton
+                href={`/${locale}/teams`}
+                onClick={() => setIsOpen(false)}
+                pageTitle="teams"
+              />
+              <HeaderPageButton
+                href={`/${locale}/players`}
+                onClick={() => setIsOpen(false)}
+                pageTitle="players"
               />
               <HeaderPageButton
                 href={`/${locale}/signin`}
                 onClick={() => setIsOpen(false)}
                 pageTitle="signin"
-              />
-              <HeaderPageButton
-                href={`/${locale}/signup`}
-                onClick={() => setIsOpen(false)}
-                pageTitle="signup"
               />
             </div>
           </div>

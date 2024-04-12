@@ -219,11 +219,11 @@ export default function Home({ params: { id } }: { params: { id: string } }) {
                 {isLoading ? (
                   <Button disabled type="submit">
                     <Loader2 className="mr-2 size-4 animate-spin" />
-                    {t("submit")} <IoArrowForward />
+                    {t("update")} <IoArrowForward />
                   </Button>
                 ) : (
                   <Button type="submit">
-                    {t("submit")} <IoArrowForward />
+                    {t("update")} <IoArrowForward />
                   </Button>
                 )}
               </div>
